@@ -1,5 +1,6 @@
 package org.example.domain.rules;
 
+import org.example.domain.entity.Board;
 import org.example.domain.entity.Position;
 
 public interface SudokuRule {
