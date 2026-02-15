@@ -30,6 +30,23 @@ public class SudokuGame {
             throw new IllegalArgumentException("O número deve estar entre 1 e 9.");
         }
     }
+
+    public boolean isGameCompleted(){
+        if(board.hasEmptyCells()) {
+            return false;
+        }
+        for(int row = 0; row < 9; row++){
+            for(int column = 0; column < 9; column++) {
+                Integer value = board.getValue(row,column);
+                Position position = new Position(row, column);
+                if (!validator.isValid(board, position, value)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public Board getBoard() {
         return board;
     }

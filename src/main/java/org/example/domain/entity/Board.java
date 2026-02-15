@@ -24,6 +24,18 @@ public class Board {
         }
     }
 
+    public boolean hasEmptyCells() {
+        for (int row = 0; row < 9; row++){
+            for (int column = 0; column < 9; column++){
+                if (grid[row][column].isEmpty()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
     public Cell getCell(Position position) {
         return grid[position.row()][position.column()];
     }
