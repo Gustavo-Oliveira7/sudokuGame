@@ -12,11 +12,11 @@ public class NoDuplicateInBlockRule implements SudokuRule{
         /// parece ruim, mas é O(1)
         for (int row = startRow; row < startRow + 3; row++) {
             for (int col = startColumn; col < startColumn + 3; col++) {
-
+                if(row == position.row() && col == position.column()) continue;
                 Cell cell = board.getGrid()[row][col];
                 Integer value = cell.getValue();
 
-                if (value != null && value == number) {
+                if (value != null && value.equals(number)) {
                     return false;
                 }
             }
