@@ -14,7 +14,7 @@ public class NoDuplicateInColumnRule implements SudokuRule{
             Cell cell = board.getGrid()[row][column];
             Integer value = cell.getValue();
             if (value != null && value.equals(number)) {
-                return false;
+                throw new IllegalArgumentException("Erro: número " + number + " já existe na coluna " + column);
             }
         }
         return true;
